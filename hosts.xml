@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root id="by-rhadamanthe" version="2021-05-20" spec="1.1">
+
+<!--  Verified -->
+<host id="4chan">
+	<domain>4chan.org</domain>
+	<path-pattern>_$CURRENT$_</path-pattern>
+	<link-search-pattern>xpath: //a[@class='fileThumb']</link-search-pattern>
+	<link-attribute>href</link-attribute>
+</host>
+
+<!--  Verified -->
+<!-- Archives for 4chan -->
+<host id="yuki.la">
+	<domain>yuki.la</domain>
+	<path-pattern>_$CURRENT$_</path-pattern>
+	<link-search-pattern>xpath: //a[@class='fileThumb']</link-search-pattern>
+	<link-attribute>href</link-attribute>
+</host>
+
+<host id="abload">
+	<domain>abload.de</domain>
+	<path-pattern>image\.php\?img=.+</path-pattern>
+	<link-search-pattern>ID: image</link-search-pattern>
+</host>
+
+<host id="akiba-online">
+	<domain>akiba-online.com</domain>
+	<path-pattern>forum/attachment\.php\?attachmentid=\d+</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="bellazon">
+	<domain>bellazon.com</domain>
+	<path-pattern>main/index\.php\?.+attach</path-pattern>
+	<link-search-pattern>ID: thepic</link-search-pattern>
+</host>
+	
+<!-- Verified -->
+<host id="bildhost">
+	<domain>bildhost.com</domain>
+	<path-pattern>image/.+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:image"\s+content="([^"]+)"]]></link-search-pattern>
+</host>
+
+<!--  Verified -->
+<host id="buchanan-caps">
+	<domain>buchanan-caps.com</domain>
+	<path-pattern>caps/.+\d\.(jpg|png|gif)</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="celebrities-pictures">
+	<domain>celebrities-pictures.com</domain>
+	<path-pattern>photo/.+\.jpg\.html</path-pattern>
+	<link-search-pattern>expreg: http://all-pictures\.pixcatcher\.com/download/\?url=(.+\.jpg)</link-search-pattern>
+</host>
+
+<host id="celebritypicsblog">
+	<domain>celebritypicsblog.com</domain>
+	<path-pattern>viewer\.php\?id=+.</path-pattern>
+	<link-search-pattern>REPLACE: 'viewer\.php\?id=(.+)','images/$1'</link-search-pattern>
+</host>
+
+<host id="celebritypictures">
+	<domain>celebritypictures.com</domain>
+	<path-pattern>celebs/.+\.jpg</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="celebs101">
+	<domain>celebs101.com</domain>
+	<path-pattern>image-\d+--\d+--.+\.html</path-pattern>
+	<link-search-pattern>ID: imgspace</link-search-pattern>
+</host>
+
+<host id="celebscentral">
+	<domain>celebscentral.net</domain>
+	<path-pattern>photo/.+</path-pattern>
+	<link-search-pattern>ID: thepic</link-search-pattern>
+</host>
+
+<host id="cfake">
+	<domain>cfake.com</domain>
+	<path-pattern>photos/.+\.(jpg|png|gif)</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="coppermine">
+	<!-- No specific domain here -->
+	<domain>_$ANY$_</domain>
+	<path-pattern>albums/.*/thumb_\d+~\d+\.(jpg|png|gif)</path-pattern>
+	<link-search-pattern>replace: 'thumb_([^/]+)\.', 'normal_$1.'</link-search-pattern>
+</host>
+
+<host id="deviantart">
+	<domain>deviantart.com</domain>
+	<path-pattern>art/.+</path-pattern>
+	<link-search-pattern>ID: gmi-ResViewSizer_fullimg</link-search-pattern>
+</host>
+
+<host id="egotastic">
+	<domain>egotastic.com</domain>
+	<path-pattern>\d+/\d+/[^/]+/[^/]+/</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <a href="([^"]+)" class="view-orig"]]></link-search-pattern>
+</host>
+
+<host id="eroprofile">
+	<domain>eroprofile.com</domain>
+	<path-pattern>.+/photos/view/.+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <div class="photo"><a href="(.+?)"]]></link-search-pattern>
+</host>
+
+<host id="famousboard">
+	<domain>famousboard.com</domain>
+	<path-pattern>.*(?:(?:download\.php\?id=.+)|(?:download,id,.+))</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="fapomatic">
+	<domain>fapomatic.com</domain>
+	<path-pattern>show\.php\?(.*&amp;)?f=.+</path-pattern>
+	<link-search-pattern>ID: subject</link-search-pattern>
+</host>
+
+<!--
+<host id="fetlife">
+<path-pattern>http://fetlife\.com/.+/pictures/\d+</path-pattern>
+<link-search-pattern>src=".+?_720\..{3,4}"</link-search-pattern>
+</host>
+-->
+
+<!-- Verified -->
+<host id="flickr">
+	<domain>flickr.com</domain>
+	<path-pattern>photos/[^/]+/\d+/in/(dateposted|album-[^/]+|faves-[^/]+)/</path-pattern>
+	<interceptor>replace: 'in/(dateposted|album-[^/]+|faves-[^/]+)/', 'sizes/o'</interceptor>
+	<link-search-pattern>xpath: //div[@id='all-sizes-header']/dl[2]/dd/a</link-search-pattern>
+	<link-attribute>href</link-attribute>
+</host>
+
+<host id="hotcelebshome">
+	<domain>hotcelebshome.com</domain>
+	<path-pattern>\d+/\d+/\d+/.+?/(?!trackback).+?/</path-pattern>
+	<link-search-pattern>ID: thepic</link-search-pattern>
+</host>
+
+<host id="hqscan">
+	<domain>hqscan.com</domain>
+	<path-pattern>pics/.+</path-pattern>
+	<link-search-pattern>expreg: src="(http://people\.freenet\.de/.+)"</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="image-bugs">
+	<domain>image-bugs.com</domain>
+	<path-pattern>image/.+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:image"\s+content="([^"]+)"]]></link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="imagebam">
+	<domain>imagebam.com</domain>
+	<path-pattern>(image|view)/[^&amp;&lt;&gt;"]+</path-pattern>
+	<link-search-pattern>css query: .main-image</link-search-pattern>
+	<file-name-attribute>alt</file-name-attribute>
+</host>
+
+<!--  Verified -->
+<host id="imagefap">
+	<domain>imagefap.com</domain>
+	<path-pattern>photo/.*</path-pattern>
+	<link-search-pattern>expreg: "contentUrl"\s*:\s*"(.*)"</link-search-pattern>
+</host>
+
+<host id="imagepix">
+	<domain>imagepix.org</domain>
+	<path-pattern>image/.+</path-pattern>
+	<link-search-pattern>REPLACE: 'image/(.+)\.html','full/$1.jpg'</link-search-pattern>
+</host>
+
+<host id="imagerise">
+	<domain>imagerise.com</domain>
+	<path-pattern>(show|view)\.php/.+</path-pattern>
+	<link-search-pattern>ID: img_obj</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="imgspice">
+	<domain>imgspice.com</domain>
+	<path-pattern><![CDATA[[^<>/"]+/.+\.html]]></path-pattern>
+	<link-search-pattern>ID: imgpreview</link-search-pattern>
+	<file-name-attribute>alt</file-name-attribute>
+</host>
+
+<!-- Verified -->
+<host id="imagetwist">
+	<domain>imagetwist.com</domain>
+	<path-pattern>\w+/[^/"]+</path-pattern>
+	<link-search-pattern>class: pic img img-responsive</link-search-pattern>
+</host>
+
+<!-- Verified (still working for old images) -->
+<host id="imagevenue-old">
+	<domain>imagevenue.com</domain>
+	<path-pattern>(img|view)\.php\?image=.+</path-pattern>
+	<link-search-pattern>CSS query: .card-body img</link-search-pattern>
+	<file-name-attribute>alt</file-name-attribute>
+</host>
+
+<!-- Verified (for images posted from 2021 and probably before) -->
+<host id="imagevenue-2021">
+	<domain>imagevenue.com</domain>
+	<path-pattern>[A-Z0-9]+</path-pattern>
+	<link-search-pattern>CSS query: .card-body img</link-search-pattern>
+	<file-name-attribute>alt</file-name-attribute>
+</host>
+
+<host id="imdb">
+	<domain>imdb.com</domain>
+	<path-pattern><![CDATA[[^<>"/]+/mediaindex/.+/media/[^<>/"]+/.+]]></path-pattern>
+	<link-search-pattern>ID: primary-img</link-search-pattern>
+</host>
+
+<host id="img.ns4w.org">
+	<domain>img.ns4w.org</domain>
+	<path-pattern>show\.php/.+\.html</path-pattern>
+	<link-search-pattern>ID: img_obj</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="imgbox">
+	<domain>imgbox.com</domain>
+	<path-pattern>[^/"]+</path-pattern>
+	<link-search-pattern>ID: img</link-search-pattern>
+	<file-name-attribute>title</file-name-attribute>
+</host>
+
+<!-- Verified -->
+<host id="imgcredit.xyz">
+	<domain>imgcredit.xyz</domain>
+	<path-pattern>image/.+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:image"\s+content="([^"]+)"]]></link-search-pattern>
+</host>
+
+<host id="imgchili">
+	<domain>imgchili.net</domain>
+	<path-pattern>show/.+</path-pattern>
+	<link-search-pattern>ID: show_image</link-search-pattern>
+</host>
+
+<host id="imgfilez">
+	<domain>imgfilez.com</domain>
+	<path-pattern>img\.php\?image=.+</path-pattern>
+	<link-search-pattern>REPLACE: 'img\.php\?image=(.+)','storage/originals/$1'</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="imgur">
+	<domain>imgur.com</domain>
+	<path-pattern>.+</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="instagram-pics">
+	<domain>instagram.com</domain>
+	<path-pattern>p/.+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:image"\s+content="([^"]+)"]]></link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="instagram-vids">
+	<domain>instagram.com</domain>
+	<path-pattern>p/.+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:video"\s+content="([^"]+)"]]></link-search-pattern>
+</host>
+
+<host id="justjared">
+	<domain>justjared.buzznet.com</domain>
+	<path-pattern>photo-gallery/\d+/.+?/</path-pattern>
+	<link-search-pattern>ID: feature_image</link-search-pattern>
+</host>
+
+<host id="kinghost">
+	<domain>kinghost.com</domain>
+	<path-pattern>.+\.jpg</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="leather-celebrities">
+	<domain>leathercelebrities.com</domain>
+	<path-pattern>photos/viewgallery/.+</path-pattern>
+	<link-search-pattern>xpath: //div[@class='image']/img</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="LeBoxonDeLex-gallery">
+	<domain>le-boxon-de-lex.fr</domain>
+	<path-pattern>galerie/miniatures/.*\.(jpg|png|gif)</path-pattern>
+	<link-search-pattern>replace: '/miniatures/([^/]+)/tn_(.+)', '/originales/$1/$2'</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="LeBoxonDeLex-webms">
+	<domain>videos.le-boxon-de-lex.fr</domain>
+	<path-pattern>webm/.*\.mp4</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="myspace">
+	<domain>viewmorepics.myspace.com</domain>
+	<path-pattern>index\.cfm\?fuseaction=viewImage.+imageID=\d+</path-pattern>
+	<link-search-pattern>ID: userImage</link-search-pattern>
+</host>
+
+<host id="myspace2">
+	<domain>myspace.com</domain>
+	<path-pattern>.+/photos/\d+</path-pattern>
+	<link-search-pattern>ID: singlePhotoImage</link-search-pattern>
+</host>
+
+<host id="nudostar">
+  <domain>nudostar.com</domain>
+  <path-pattern>forum/attachments/[^&lt;&gt;"?]*</path-pattern>
+  <link-search-pattern>self</link-search-pattern>
+  <interceptor>replace: '/$', ''</interceptor>
+  <file-name-attribute></file-name-attribute>
+  <interceptor>replace: '-jpg\.\d+', '.jpg'</interceptor>
+  <interceptor>replace: '-jpeg\.\d+', '.jpg'</interceptor>
+  <interceptor>replace: '-png\.\d+', '.png'</interceptor>
+  <!-- Consider numeric names as JPG files -->
+  <interceptor>replace: '^(\d+)$', '$1.jpg'</interceptor>
+</host>
+
+<host id="photo.net">
+	<domain>photo.net</domain>
+	<path-pattern>photodb/photo\?photo_id=\d+</path-pattern>
+	<link-search-pattern>REPLACE: 'http://photo\.net/photodb/photo\?photo_id=(\d+)' , 'http://gallery.photo.net/photo/$1-lg.jpg'</link-search-pattern>
+</host>
+
+<host id="photobucket">
+	<domain>photobucket.com</domain>
+	<path-pattern>albums/.+/\?action=view\&amp;current=.+\..{3,4}</path-pattern>
+	<link-search-pattern>REPLACE: 'http:\/\/(.+)\\.photobucket\\.com\/albums\/(.+)\/.+current=(.+\\....)' , 'http://$1.photobucket.com/albums/$2/$3'</link-search-pattern>
+</host>
+
+<host id="photobucket2">
+	<domain>photobucket.com</domain>
+	<path-pattern><![CDATA[albums/[^<>/"]+/.+\..{3,4}]]></path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="photocelebs">
+	<domain>photocelebs.info</domain>
+	<path-pattern><![CDATA[[^<>/"]+/.+]]></path-pattern>
+	<link-search-pattern>ID: thepic</link-search-pattern>
+</host>
+
+<host id="picland">
+	<domain>picland.to</domain>
+	<path-pattern>show\.php\?id=</path-pattern>
+	<link-search-pattern>ID: image</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="pimpandhost">
+	<domain>pimpandhost.com</domain>
+	<path-pattern>image/.*</path-pattern>
+	<link-search-pattern>CLASS: main-image-wrapper</link-search-pattern>
+    <link-attribute>data-src</link-attribute>
+</host>
+
+<host id="pixhost-org">
+	<domain>pixhost.org</domain>
+	<path-pattern>show/.+</path-pattern>
+	<interceptor>replace: '\.org/', '.to/'</interceptor>
+	<link-search-pattern>ID: image</link-search-pattern>
+	<file-name-attribute>alt</file-name-attribute>
+</host>
+
+<!-- Verified -->
+<host id="pixhost-to">
+	<domain>pixhost.to</domain>
+	<path-pattern>show/.+</path-pattern>
+	<link-search-pattern>ID: image</link-search-pattern>
+	<file-name-attribute>alt</file-name-attribute>
+</host>
+
+<!-- Verified -->
+<host id="postimage">
+	<domain>postimg.cc</domain>
+	<path-pattern>[^/&amp;&lt;&gt;"]+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:image"\s+content="([^"]+)"]]></link-search-pattern>
+</host>
+
+<host id="skins.be" maxThreads="2">
+	<domain>image.skins.be</domain>
+	<path-pattern>[0-9]+/.+/</path-pattern>
+	<link-search-pattern>ID: wallpaper_image</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="southern-charms">
+	<domain-pattern>southern-charms\d*\.com</domain-pattern>
+	<path-pattern>fotos\d*/.+\.jpg</path-pattern>
+	<link-search-pattern>SELF</link-search-pattern>
+	<interceptor>replace: '/tn_', '/'</interceptor>
+</host>
+
+<!-- Verified -->
+<host id="The Fetish Queen">
+	<domain>the-fetish-queen.de</domain>
+	<path-pattern>thumbnails/.+</path-pattern>
+	<link-search-pattern>replace: 'thumbnails/', 'images/'</link-search-pattern>
+</host>
+
+<host id="thesuperficial">
+	<domain>thesuperficial.com</domain>
+	<path-pattern>[^/]+/[^?#/]+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <a href="(.+?)" >View Original</a>]]></link-search-pattern>
+</host>
+
+<host id="thesupermodelsgallery">
+	<domain>thesupermodelsgallery.com</domain>
+	<path-pattern><![CDATA[wp-content/uploads/\d+/\d+/[^<>/"]+/.+\..{3,4}]]></path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="tinypic">
+	<domain>tinypic.com</domain>
+	<path-pattern>.+pic=.+</path-pattern>
+	<link-search-pattern>ID: imgElement</link-search-pattern>
+</host>
+
+<host id="tinypic2">
+	<domain>tinypic.com</domain>
+	<path-pattern>.+\..{3,4}</path-pattern>
+	<link-search-pattern>self</link-search-pattern>
+</host>
+
+<host id="turboimagehost">
+	<domain>turboimagehost.com</domain>
+	<path-pattern>p/.+</path-pattern>
+	<link-search-pattern>ID: uImage</link-search-pattern>
+</host>
+
+<host id="x-art">
+	<domain>hosted.x-art.com</domain>
+	<path-pattern>galleries/\w+/view_image\.php.+</path-pattern>
+	<link-search-pattern>ID: gallery_image</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="xhamster">
+	<domain>xhamster.com</domain>
+	<path-pattern>_$CURRENT$_</path-pattern>
+	<link-search-pattern>expreg: "imageURL":"([^"]+)"</link-search-pattern>
+</host>
+
+<!-- Verified -->
+<host id="legsonshow">
+	<domain>legsonshow.com</domain>
+	<path-pattern>members/gallery/render/.+\.JPG</path-pattern>
+	<link-search-pattern>replace: '/render/[^/]+/', '/content/'</link-search-pattern>
+</host>
+
+<host id="yfrog">
+	<domain>yfrog.com</domain>
+	<path-pattern>\w+</path-pattern>
+	<link-search-pattern><![CDATA[expreg: Direct:.+?href="(.+?)"]]></link-search-pattern>
+</host>
+
+<host id="zimagez">
+	<domain>zimagez.com</domain>
+	<path-pattern>zimage/.+\.php</path-pattern>
+	<link-search-pattern>ID: userPic</link-search-pattern>
+</host>
+	
+<!-- Verified -->
+<host id="tumblr">
+	<domain>tumblr.com</domain>
+	<path-pattern>_$CURRENT$_</path-pattern>
+	<link-search-pattern><![CDATA[expreg: <meta property="og:image"\s+content="([^"]+)"]]></link-search-pattern>
+	<interceptor>replace: '_\d+\.(jpg|png|gif)', '_1280.$1'</interceptor>
+</host>
+	
+<!-- Verified -->
+<host id="tumblr-restricted">
+	<domain>tumblr.com</domain>
+	<path-pattern>_$CURRENT$_</path-pattern>
+	<link-search-pattern><![CDATA[expreg: data-big-photo="([^"]+)"]]></link-search-pattern>
+	<interceptor>replace: '_\d+\.(jpg|png|gif)', '_1280.$1'</interceptor>
+</host>
+
+<!-- Verified -->
+<host id="the-travel-deluxe">
+	<domain>the-travel-deluxe.com</domain>
+	<path-pattern>_$CURRENT$_</path-pattern>
+	<link-search-pattern>xpath: //img</link-search-pattern>
+	<link-attribute>srcSet</link-attribute>
+	<interceptor>replace: '\?.*', ''</interceptor>
+</host>
+
+</root>
