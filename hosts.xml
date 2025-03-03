@@ -10,7 +10,7 @@
 </host>
 <host id="ibb">
 	<domain>ibb.co</domain>
-	<path-pattern>_$CURRENT$_</path-pattern>
+	<path-pattern>.*</path-pattern>
 	<link-search-pattern>xpath: /html/body/div[1]/div/img</link-search-pattern>
 </host>
 
